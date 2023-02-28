@@ -49,4 +49,9 @@ public class Haromszog extends Sokszog {
         return Math.sqrt(s * (s - this.getA()) * (s - this.b) * (s - this.c));
     }
 
+    @Override
+    public String toString() {
+        return String.format("Háromszög: a = %f, b = %f, c = %f, K = %f, T = %f",
+                this.getA(), this.b, this.c, this.getKerulet(), this.getTerulet());
+    }
 }
