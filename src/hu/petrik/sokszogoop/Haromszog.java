@@ -1,8 +1,22 @@
 package hu.petrik.sokszogoop;
 
+import java.util.Random;
+
 public class Haromszog extends Sokszog {
     private double b;
     private double c;
+
+    private static final Random RND = new Random();
+
+    private static double getVeletlenOldalhossz() {
+        return RND.nextDouble() * 10 + 5;
+    }
+
+    public Haromszog() {
+        super(getVeletlenOldalhossz());
+        this.b = getVeletlenOldalhossz();
+        this.c = getVeletlenOldalhossz();
+    }
 
     public Haromszog(double a, double b, double c) {
         super(a);
