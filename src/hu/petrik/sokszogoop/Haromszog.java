@@ -16,6 +16,17 @@ public class Haromszog extends Sokszog {
         super(getVeletlenOldalhossz());
         this.b = getVeletlenOldalhossz();
         this.c = getVeletlenOldalhossz();
+        while (!isSzerkesztheto()) {
+            this.setA(getVeletlenOldalhossz());
+            this.b = getVeletlenOldalhossz();
+            this.c = getVeletlenOldalhossz();
+        }
+    }
+
+    private boolean isSzerkesztheto() {
+        return this.getA() + this.b > this.c &&
+                this.getA() + this.c > this.b &&
+                this.b + this.c > this.getA();
     }
 
     public Haromszog(double a, double b, double c) {
