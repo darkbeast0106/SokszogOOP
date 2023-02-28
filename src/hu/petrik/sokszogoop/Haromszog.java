@@ -51,10 +51,12 @@ public class Haromszog extends Sokszog {
         this.c = c;
     }
 
+    @Override
     public double getKerulet() {
         return this.getA() + this.b + this.c;
     }
 
+    @Override
     public double getTerulet() {
         double s = getKerulet() / 2;
         return Math.sqrt(s * (s - this.getA()) * (s - this.b) * (s - this.c));
@@ -62,7 +64,7 @@ public class Haromszog extends Sokszog {
 
     @Override
     public String toString() {
-        return String.format("Háromszög: a = %f, b = %f, c = %f, K = %f, T = %f",
-                this.getA(), this.b, this.c, this.getKerulet(), this.getTerulet());
+        return String.format("Háromszög: a = %.2f, b = %.2f, c = %.2f, %s",
+                this.getA(), this.b, this.c, super.toString());
     }
 }
